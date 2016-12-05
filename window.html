@@ -8,22 +8,61 @@
         margin: 0px;
         height: 100%;
     }
+    
     #snow-block {
         background-color: black;
         margin: 0px;
         height: 80%;
     }
+    
+    .santa {
+        position: fixed;
+        top: 60%;
+        left: 0px;
+        z-index: 10;
+
+        animation-duration: 14s;
+        animation-timing-function: ease-in-out;
+        animation-name: goRight;
+        animation-iteration-count: infinite;
+
+        -moz-animation-duration: 14s;
+        -moz-animation-timing-function: ease-in-out;
+        -moz-animation-name: goRight;
+        -moz-animation-iteration-count: infinite;
+    }
+
+    @keyframes goRight {
+      from {
+        -webkit-transform: translate(-100%,0);
+      }
+
+      to {
+        -webkit-transform: translate(500%,0);
+      }
+    }
+
+    @-moz-keyframes goRight {
+      from {
+        -moz-transform: translate(-100%,0);
+      }
+
+      to {
+        -moz-transform: translate(500%,0);
+      }
+    }
+    
 </style>
 <title>Totterdown festive window</title>
 <script type="text/javascript" src="snowstorm.js"></script>
 <script type="text/javascript">
     snowStorm.snowColor = '#fff'; // blue-ish snow!?
-    snowStorm.flakesMaxActive = 96;  // show more snow on screen at once
+    snowStorm.flakesMaxActive = 196;  // show more snow on screen at once
     snowStorm.useTwinkleEffect = true; // let the snow flicker in and out of view
-    snowStorm.animationInterval = 50;
+    snowStorm.animationInterval = 20;
     snowStorm.followMouse = false;
-    snowStorm.vMaxX = 2;
-    snowStorm.vMaxY = 2;
+    snowStorm.vMaxX = 0.15;
+    snowStorm.vMaxY = 1;
     snowStorm.flakesMax = 128;
     snowStorm.targetElement = 'snow-block';
 </script>
@@ -31,5 +70,8 @@
 
 <body>
 <div id="snow-block"/>
+<div class="santa">
+   <img src="Animated_santa_reindeer_flying.gif" width="300">
+</div>
 </body>
 </html>
